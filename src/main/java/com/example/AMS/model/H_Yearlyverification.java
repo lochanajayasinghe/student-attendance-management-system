@@ -16,14 +16,14 @@ public class H_Yearlyverification {
     private Asset asset;
 
     @ManyToOne
-    @JoinColumn(name = "UserID")
+    @JoinColumn(name = "User_ID")
     private User user;
 
-    @Column(name = "Verification_date")
+    @Column(name = "Verification_Date")
     @Temporal(TemporalType.DATE)
     private Date verificationDate;
 
-    @Column(name = "Verification_details")
+    @Column(name = "Verification_Details")
     private String verificationDetails;
 
     @Column(name = "Verification")
