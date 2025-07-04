@@ -1,3 +1,10 @@
+package com.example.AMS.model;
+
+import jakarta.persistence.*;
+
+import java.util.Date;
+import java.util.List;
+
 @Entity
 public class Asset {
     @Id

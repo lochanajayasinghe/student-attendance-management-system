@@ -4,39 +4,31 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Yearly_Verification")
-public class H_Yearlyverification {
+public class YearlyVerification {
 
     @Id
-    @Column(name = "VerificationID")
-    private String verificationId;
+    private String verificationID;
 
     @ManyToOne
-    @JoinColumn(name = "Asset_ID")
+    @JoinColumn(name = "assetID")
     private Asset asset;
 
     @ManyToOne
-    @JoinColumn(name = "User_ID")
+    @JoinColumn(name = "userID")
     private User user;
 
-    @Column(name = "Verification_Date")
-    @Temporal(TemporalType.DATE)
     private Date verificationDate;
-
-    @Column(name = "Verification_Details")
     private String verificationDetails;
-
-    @Column(name = "Verification")
     private Boolean verification;
 
-    // --- Getters and Setters ---
+    // Getters and Setters
 
-    public String getVerificationId() {
-        return verificationId;
+    public String getVerificationID() {
+        return verificationID;
     }
 
-    public void setVerificationId(String verificationId) {
-        this.verificationId = verificationId;
+    public void setVerificationID(String verificationID) {
+        this.verificationID = verificationID;
     }
 
     public Asset getAsset() {

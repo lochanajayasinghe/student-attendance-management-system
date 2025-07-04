@@ -1,11 +1,26 @@
+package com.example.AMS.model;
+
+import jakarta.persistence.*;
+import java.util.Date; // ✅ This import is required
+
 @Entity
 public class Transfer {
+
     @Id
     private String transferID;
 
     @ManyToOne
     @JoinColumn(name = "assetID")
     private Asset asset;
+
+    @ManyToOne
+    @JoinColumn(name = "locationID")
+    private Location location;
+
+    private Date transferDate;
+    private String departmentName;
+
+    // Getters and Setters
 
     public String getTransferID() {
         return transferID;
@@ -46,11 +61,4 @@ public class Transfer {
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "locationID")
-    private Location location;
-
-    private Date transferDate;
-    private String departmentName;
 }

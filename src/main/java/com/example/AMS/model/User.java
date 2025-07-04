@@ -1,5 +1,11 @@
+package com.example.AMS.model;
+
+import jakarta.persistence.*;
+import java.util.List;
+
 @Entity
 public class User {
+
     @Id
     private String userID;
 
@@ -12,6 +18,11 @@ public class User {
     private String email;
     private String description;
     private String role;
+
+    @OneToMany(mappedBy = "user")
+    private List<YearlyVerification> verifications;
+
+    // Getters and Setters
 
     public String getUserID() {
         return userID;
@@ -76,7 +87,4 @@ public class User {
     public void setVerifications(List<YearlyVerification> verifications) {
         this.verifications = verifications;
     }
-
-    @OneToMany(mappedBy = "user")
-    private List<YearlyVerification> verifications;
 }
