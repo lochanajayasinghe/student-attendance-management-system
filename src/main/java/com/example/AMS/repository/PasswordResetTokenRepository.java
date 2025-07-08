@@ -1,7 +1,7 @@
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.model.PasswordResetToken;
-import com.example.Login.model.User;
+import com.example.AMS.model.PasswordResetToken;
+import com.example.AMS.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
