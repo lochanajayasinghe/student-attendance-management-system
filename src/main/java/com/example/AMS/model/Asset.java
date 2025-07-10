@@ -39,12 +39,7 @@ public class Asset {
     @OneToMany(mappedBy = "asset")
     private List<Condemn> condemns;
 
-    @OneToMany(mappedBy = "asset")
-    private List<YearlyVerification> verifications;
-
-    @OneToMany(mappedBy = "asset")
-    private List<User> users;
-
+    
     public String getAssetID() {
         return assetID;
     }
@@ -181,19 +176,5 @@ public class Asset {
         this.condemns = condemns;
     }
 
-    public List<YearlyVerification> getVerifications() {
-        return verifications;
-    }
 
-    public void setVerifications(List<YearlyVerification> verifications) {
-        this.verifications = verifications;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 }
