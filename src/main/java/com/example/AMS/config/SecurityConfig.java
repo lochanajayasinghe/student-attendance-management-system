@@ -1,7 +1,7 @@
-package com.example.Login.config;
+package com.example.AMS.config;
 
-import com.example.Login.service.CustomOAuth2UserService;
-import com.example.Login.service.CustomUserDetailsService;
+import com.example.AMS.service.CustomOAuth2UserService;
+import com.example.AMS.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
