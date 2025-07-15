@@ -1,8 +1,8 @@
-package com.example.Login.controller;
+package com.example.AMS.controller;
 
-import com.example.Login.model.User;
-import com.example.Login.repository.RoleRepository;
-import com.example.Login.service.AuthService;
+import com.example.AMS.model.User;
+import com.example.AMS.repository.RoleRepository;
+import com.example.AMS.service.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 
