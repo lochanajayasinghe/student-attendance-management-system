@@ -1,4 +1,4 @@
-package com.example.Login.controller;
+package com.example.AMS.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
