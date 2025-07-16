@@ -1,6 +1,6 @@
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.model.VerificationToken;
+import com.example.AMS.model.VerificationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
