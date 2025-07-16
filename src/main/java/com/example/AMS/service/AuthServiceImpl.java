@@ -1,7 +1,7 @@
-package com.example.Login.service;
+package com.example.AMS.service;
 
-import com.example.Login.model.*;
-import com.example.Login.repository.*;
+import com.example.AMS.model.*;
+import com.example.AMS.repository.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
