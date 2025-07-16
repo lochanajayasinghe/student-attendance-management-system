@@ -1,0 +1,29 @@
+<!-- Condemn Form (Thymeleaf) -->
+<form th:action="@{/api/condemn-forms}" th:object="${condemnForm}" method="post" class="needs-validation" novalidate
+      xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="mb-3">
+        <label for="assetId" class="form-label">Asset ID</label>
+        <input type="number" th:field="*{assetId}" class="form-control" id="assetId" required>
+        <div class="invalid-feedback">Asset ID is required.</div>
+    </div>
+    <div class="mb-3">
+        <label for="reason" class="form-label">Reason</label>
+        <input type="text" th:field="*{reason}" class="form-control" id="reason" required>
+        <div class="invalid-feedback">Reason is required.</div>
+    </div>
+    <div class="mb-3">
+        <label for="dateCondemned" class="form-label">Date Condemned</label>
+        <input type="date" th:field="*{dateCondemned}" class="form-control" id="dateCondemned" required>
+        <div class="invalid-feedback">Date is required.</div>
+    </div>
+    <div class="mb-3">
+        <label for="condemnedBy" class="form-label">Condemned By</label>
+        <input type="text" th:field="*{condemnedBy}" class="form-control" id="condemnedBy" required>
+        <div class="invalid-feedback">Name is required.</div>
+    </div>
+    <div class="mb-3">
+        <label for="remarks" class="form-label">Remarks</label>
+        <textarea th:field="*{remarks}" class="form-control" id="remarks" rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-hero btn-hero-primary">Submit</button>
+</form>
