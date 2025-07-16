@@ -1,6 +1,6 @@
-package com.example.Login.service;
+package com.example.AMS.service;
 
-import com.example.Login.model.User;
+import com.example.AMS.model.User;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
