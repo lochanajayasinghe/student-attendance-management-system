@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout.html}">
+<head>
+    <title>Maintenance Form</title>
+</head>
+<body>
+<div class="container mt-4" layout:fragment="content">
+    <h2>Maintenance Form</h2>
+
+    <form th:action="@{/maintenance-form}" method="post" th:object="${maintenanceForm}">
+        <div class="form-group">
+            <label>Maintenance ID</label>
+            <input type="text" th:field="*{maintenanceId}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label>Asset ID</label>
+            <input type="text" th:field="*{assetId}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label>Maintenance Date</label>
+            <input type="date" th:field="*{maintenanceDate}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label>Technician</label>
+            <input type="text" th:field="*{technician}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea th:field="*{description}" class="form-control" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Status</label>
+            <select th:field="*{status}" class="form-control" required>
+                <option value="">-- Select Status --</option>
+                <option value="Completed">Completed</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr>
+    <h4>Submitted Maintenance Records</h4>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Asset ID</th>
+            <th>Date</th>
+            <th>Technician</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="form : ${formList}">
+            <td th:text="${form.maintenanceId}"></td>
+            <td th:text="${form.assetId}"></td>
+            <td th:text="${form.maintenanceDate}"></td>
+            <td th:text="${form.technician}"></td>
+            <td th:text="${form.description}"></td>
+            <td th:text="${form.status}"></td>
+            <td>
+                <a th:href="@{'/maintenance-form/edit/' + ${form.maintenanceId}}" class="btn btn-sm btn-info">Edit</a>
+                <a th:href="@{'/maintenance-form/delete/' + ${form.maintenanceId}}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
