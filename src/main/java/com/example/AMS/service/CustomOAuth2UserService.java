@@ -1,9 +1,9 @@
-package com.example.Login.service;
+package com.example.AMS.service;
 
-import com.example.Login.model.Role;
-import com.example.Login.model.User;
-import com.example.Login.repository.RoleRepository;
-import com.example.Login.repository.UserRepository;
+import com.example.AMS.model.Role;
+import com.example.AMS.model.User;
+import com.example.AMS.repository.RoleRepository;
+import com.example.AMS.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value; // Import for @Value
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
