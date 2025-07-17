@@ -1,8 +1,8 @@
 // com.example.Login.repository.L_AssetUserRepository
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.dto.L_UserHistoryDto;
-import com.example.Login.model.AssetUser;
+import com.example.AMS.dto.L_UserHistoryDto;
+import com.example.AMS.model.AssetUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
