@@ -1,7 +1,7 @@
-package com.example.Login.controller.admin;
+package com.example.AMS.controller.admin;
 
-import com.example.Login.dto.UserDto;
-import com.example.Login.service.AdminUserService;
+import com.example.AMS.dto.UserDto;
+import com.example.AMS.service.AdminUserService;
 
 import java.util.List;
 
