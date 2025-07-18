@@ -1,7 +1,7 @@
-package com.example.Login.controller;
+package com.example.AMS.controller;
 
-import com.example.Login.model.AssetUser;
-import com.example.Login.service.L_AssetUserService;
+import com.example.AMS.model.AssetUser;
+import com.example.AMS.service.L_AssetUserService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
