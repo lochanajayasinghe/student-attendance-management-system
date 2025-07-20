@@ -1,4 +1,4 @@
-package com.example.Login.dto;
+package com.example.AMS.dto;
 
 import java.util.Date;
 
