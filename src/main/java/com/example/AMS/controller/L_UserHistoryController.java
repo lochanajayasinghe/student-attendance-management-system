@@ -1,7 +1,7 @@
-package com.example.Login.controller; // Changed package to include 'director'
+package com.example.AMS.controller; // Changed package to include 'director'
 
-import com.example.Login.model.AssetUser;
-import com.example.Login.service.L_AssetUserService;
+import com.example.AMS.model.AssetUser;
+import com.example.AMS.service.L_AssetUserService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -26,7 +26,7 @@ public class L_UserHistoryController { // Renamed class
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR', 'ROLE_USER')")
     public String getUserHistory(Model model,
                                  Authentication authentication) {
-        List<com.example.Login.dto.L_UserHistoryDto> userHistories = assetUserService.getAllUserHistoryDtos();
+        List<com.example.AMS.dto.L_UserHistoryDto> userHistories = assetUserService.getAllUserHistoryDtos();
 
         // Check if the user has only ROLE_USER (not other higher roles)
         boolean isRegularUser = authentication.getAuthorities().stream()
