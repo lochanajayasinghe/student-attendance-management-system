@@ -1,6 +1,6 @@
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.model.Asset;
+import com.example.AMS.model.Asset;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
