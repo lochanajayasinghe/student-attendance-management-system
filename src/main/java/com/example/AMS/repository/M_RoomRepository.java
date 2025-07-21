@@ -1,6 +1,6 @@
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.model.Room;
+import com.example.AMS.model.Room;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface M_RoomRepository extends JpaRepository<Room, String> {
