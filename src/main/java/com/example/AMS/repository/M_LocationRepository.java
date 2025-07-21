@@ -1,6 +1,6 @@
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.model.Location;
+import com.example.AMS.model.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface M_LocationRepository extends JpaRepository<Location, Long> {
