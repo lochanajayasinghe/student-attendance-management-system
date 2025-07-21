@@ -1,7 +1,7 @@
-package com.example.Login.controller.admin; // Changed package to include 'admin'
+package com.example.AMS.controller.admin; // Changed package to include 'admin'
 
-import com.example.Login.model.AssetUser;
-import com.example.Login.service.L_AssetUserService;
+import com.example.AMS.model.AssetUser;
+import com.example.AMS.service.L_AssetUserService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
@@ -32,7 +32,7 @@ public class L_A_UserHistoryController { // Renamed class
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR', 'ROLE_USER')")
     public String getUserHistory(Model model,
                                  Authentication authentication) {
-        List<com.example.Login.dto.L_UserHistoryDto> userHistories = assetUserService.getAllUserHistoryDtos();
+        List<com.example.AMS.dto.L_UserHistoryDto> userHistories = assetUserService.getAllUserHistoryDtos();
 
         // Check if the user has only ROLE_USER (not other higher roles)
         boolean isRegularUser = authentication.getAuthorities().stream()
@@ -56,21 +56,21 @@ public class L_A_UserHistoryController { // Renamed class
         // Asset auto-suggest endpoint
     @GetMapping("/assets/suggest")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR', 'ROLE_USER')")
-    public @ResponseBody List<com.example.Login.model.Asset> suggestAssets(@RequestParam("query") String query) {
+    public @ResponseBody List<com.example.AMS.model.Asset> suggestAssets(@RequestParam("query") String query) {
         return assetUserService.suggestAssets(query);
     }
 
     // User auto-suggest endpoint
     @GetMapping("/users/suggest")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR', 'ROLE_USER')")
-    public @ResponseBody List<com.example.Login.dto.UserSuggestDto> suggestUsers(@RequestParam("query") String query) {
+    public @ResponseBody List<com.example.AMS.dto.UserSuggestDto> suggestUsers(@RequestParam("query") String query) {
         return assetUserService.suggestUsers(query);
     }
 
     // Add new user history endpoint
     @PostMapping("/assetUser/add")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR', 'ROLE_USER')")
-    public @ResponseBody String addAssetUser(@RequestBody com.example.Login.dto.AddUserHistoryDto dto) {
+    public @ResponseBody String addAssetUser(@RequestBody com.example.AMS.dto.AddUserHistoryDto dto) {
         boolean success = assetUserService.addAssetUserHistory(dto);
         return success ? "OK" : "ERROR";
     }
