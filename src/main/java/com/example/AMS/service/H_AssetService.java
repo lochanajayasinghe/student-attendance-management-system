@@ -1,7 +1,7 @@
-package com.example.Login.service;
+package com.example.AMS.service;
 
-import com.example.Login.model.Asset;
-import com.example.Login.repository.H_AssetRepository;
+import com.example.AMS.model.Asset;
+import com.example.AMS.repository.H_AssetRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
