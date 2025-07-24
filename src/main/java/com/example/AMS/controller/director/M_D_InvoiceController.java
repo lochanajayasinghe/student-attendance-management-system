@@ -1,7 +1,7 @@
-package com.example.Login.controller.director;
+package com.example.AMS.controller.director;
 
-import com.example.Login.model.Invoice;
-import com.example.Login.service.M_InvoiceService;
+import com.example.AMS.model.Invoice;
+import com.example.AMS.service.M_InvoiceService;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
