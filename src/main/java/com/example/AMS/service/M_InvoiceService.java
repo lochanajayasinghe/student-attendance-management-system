@@ -1,7 +1,7 @@
-package com.example.Login.service;
+package com.example.AMS.service;
 
-import com.example.Login.model.Invoice;
-import com.example.Login.repository.M_InvoiceRepository;
+import com.example.AMS.model.Invoice;
+import com.example.AMS.repository.M_InvoiceRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
