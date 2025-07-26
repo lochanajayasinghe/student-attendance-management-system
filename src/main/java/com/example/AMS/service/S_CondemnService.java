@@ -1,9 +1,9 @@
-package com.example.Login.service;
+package com.example.AMS.service;
 
-import com.example.Login.model.Asset;
-import com.example.Login.model.Condemn;
-import com.example.Login.repository.S_CondemnRepository;
-import com.example.Login.repository.AssetRepository;
+import com.example.AMS.model.Asset;
+import com.example.AMS.model.Condemn;
+import com.example.AMS.repository.S_CondemnRepository;
+import com.example.AMS.repository.AssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
