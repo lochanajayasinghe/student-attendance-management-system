@@ -1,8 +1,8 @@
-package com.example.Login.service;
+package com.example.AMS.service;
 
-import com.example.Login.dto.StaffDto;
-import com.example.Login.model.AssetUser;
-import com.example.Login.repository.L_StaffRepository;
+import com.example.AMS.dto.StaffDto;
+import com.example.AMS.model.AssetUser;
+import com.example.AMS.repository.L_StaffRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
