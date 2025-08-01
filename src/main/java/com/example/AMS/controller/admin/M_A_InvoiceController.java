@@ -1,8 +1,8 @@
-package com.example.Login.controller.admin;
+package com.example.AMS.controller.admin;
 
-import com.example.Login.model.Invoice;
-import com.example.Login.service.M_InvoiceService;
-import com.example.Login.repository.VenderRepository;
+import com.example.AMS.model.Invoice;
+import com.example.AMS.service.M_InvoiceService;
+import com.example.AMS.repository.VenderRepository;
 import java.util.List;
 
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -31,9 +31,9 @@ public class M_A_InvoiceController {
     @GetMapping("/vendors/suggest")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR')")
     public @ResponseBody List<String> suggestVendors(@RequestParam("query") String query) {
-        List<com.example.Login.model.Vender> vendors = venderRepository.findByVenderNameContainingIgnoreCase(query);
+        List<com.example.AMS.model.Vender> vendors = venderRepository.findByVenderNameContainingIgnoreCase(query);
         List<String> names = new java.util.ArrayList<>();
-        for (com.example.Login.model.Vender v : vendors) {
+        for (com.example.AMS.model.Vender v : vendors) {
             names.add(v.getVenderName());
         }
         return names;
@@ -42,7 +42,7 @@ public class M_A_InvoiceController {
     // Vendor details autofill endpoint
     @GetMapping("/vendors/details")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR')")
-    public @ResponseBody java.util.Optional<com.example.Login.model.Vender> getVendorDetails(@RequestParam("venderName") String venderName) {
+    public @ResponseBody java.util.Optional<com.example.AMS.model.Vender> getVendorDetails(@RequestParam("venderName") String venderName) {
         return venderRepository.findByVenderName(venderName);
     }
 
