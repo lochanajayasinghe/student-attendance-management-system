@@ -1,7 +1,7 @@
-package com.example.Login.controller;
+package com.example.AMS.controller;
 
-import com.example.Login.model.Asset;
-import com.example.Login.service.H_AssetService;
+import com.example.AMS.model.Asset;
+import com.example.AMS.service.H_AssetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
