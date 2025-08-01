@@ -1,9 +1,9 @@
-package com.example.Login.controller.director;
+package com.example.AMS.controller.director;
 
-import com.example.Login.model.Asset;
-import com.example.Login.model.AssetUser;
-import com.example.Login.repository.AssetRepository;
-import com.example.Login.repository.AssetUserRepository;
+import com.example.AMS.model.Asset;
+import com.example.AMS.model.AssetUser;
+import com.example.AMS.repository.AssetRepository;
+import com.example.AMS.repository.AssetUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
