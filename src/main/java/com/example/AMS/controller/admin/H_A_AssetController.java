@@ -1,9 +1,9 @@
 
-package com.example.Login.controller.admin;
+package com.example.AMS.controller.admin;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.Login.model.Asset;
-import com.example.Login.service.H_AssetService;
+import com.example.AMS.model.Asset;
+import com.example.AMS.service.H_AssetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class H_A_AssetController {
     private final H_AssetService assetService;
 
     @Autowired
-    private com.example.Login.service.M_InvoiceService invoiceService; // Service to fetch invoice numbers
+    private com.example.AMS.service.M_InvoiceService invoiceService; // Service to fetch invoice numbers
 
     public H_A_AssetController(H_AssetService assetService) {
         this.assetService = assetService;
