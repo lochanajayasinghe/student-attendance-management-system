@@ -1,9 +1,9 @@
 
-package com.example.Login.controller.director;
+package com.example.AMS.controller.director;
 
-import com.example.Login.model.Maintain;
-import com.example.Login.repository.S_MaintainRepository;
-import com.example.Login.repository.AssetRepository;
+import com.example.AMS.model.Maintain;
+import com.example.AMS.repository.S_MaintainRepository;
+import com.example.AMS.repository.AssetRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
