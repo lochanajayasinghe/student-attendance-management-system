@@ -1,4 +1,4 @@
-package com.example.Login.dto;
+package com.example.AMS.dto;
 
 public class StaffDto {
     private String userId;
