@@ -1,7 +1,7 @@
-package com.example.Login.controller.director;
+package com.example.AMS.controller.director;
 
-import com.example.Login.dto.StaffDto;
-import com.example.Login.service.L_StaffService;
+import com.example.AMS.dto.StaffDto;
+import com.example.AMS.service.L_StaffService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
