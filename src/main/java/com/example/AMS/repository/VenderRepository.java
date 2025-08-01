@@ -1,10 +1,10 @@
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.model.Vender;
+import com.example.AMS.model.Vender;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 import java.util.List;
-import com.example.Login.model.Vender;
+import com.example.AMS.model.Vender;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
