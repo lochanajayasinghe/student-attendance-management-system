@@ -1,5 +1,5 @@
 // com.example.Login.model.AssetUser
-package com.example.Login.model;
+package com.example.AMS.model;
 
 import jakarta.persistence.*;
 import java.util.Date;
