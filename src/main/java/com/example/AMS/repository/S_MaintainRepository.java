@@ -1,6 +1,6 @@
-package com.example.Login.repository;
+package com.example.AMS.repository;
 
-import com.example.Login.model.Maintain;
+import com.example.AMS.model.Maintain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
