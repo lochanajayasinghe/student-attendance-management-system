@@ -1,8 +1,8 @@
-package com.example.Login.controller.admin;
+package com.example.AMS.controller.admin;
 
-import com.example.Login.model.Asset;
-import com.example.Login.model.Condemn;
-import com.example.Login.service.S_CondemnService;
+import com.example.AMS.model.Asset;
+import com.example.AMS.model.Condemn;
+import com.example.AMS.service.S_CondemnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
