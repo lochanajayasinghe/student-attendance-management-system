@@ -1,4 +1,4 @@
-package com.example.AMS.model;
+package com.example.Login.model;
 import jakarta.persistence.*;
 import java.util.Date;
 
