@@ -14,12 +14,18 @@
             --primary-light: #a04040;
             --secondary-color: #f8f9fa;
             --accent-color: #ffc107;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #fd7e14;
             --text-dark: #343a40;
             --text-light: #f8f9fa;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
             --gradient-primary: linear-gradient(135deg, #800000 0%, #a04040 100%);
             --gradient-light: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            --gradient-success: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            --gradient-danger: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            --gradient-warning: linear-gradient(135deg, #fd7e14 0%, #e0a800 100%);
         }
         
         /* Base Styles */
@@ -274,8 +280,20 @@
             z-index: 1;
         }
 
+        /* Action Controls - Enhanced */
+        .action-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem 2rem;
+            background: rgba(128, 0, 0, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(128, 0, 0, 0.1);
+        }
+
         /* Card Styles - Enhanced */
-        .asset-card {
+        .maintenance-card {
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
@@ -285,7 +303,7 @@
             position: relative;
         }
 
-        .asset-card::before {
+        .maintenance-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -295,7 +313,7 @@
             background: var(--gradient-primary);
         }
         
-        .asset-card .card-header {
+        .maintenance-card .card-header {
             background: rgba(128, 0, 0, 0.05);
             border-bottom: 1px solid rgba(128, 0, 0, 0.1);
             padding: 1.5rem 2rem;
@@ -305,22 +323,22 @@
             backdrop-filter: blur(10px);
         }
         
-        .asset-card .card-header h5 {
+        .maintenance-card .card-header h2 {
             display: flex;
             align-items: center;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--primary-dark);
             font-weight: 600;
             margin: 0;
         }
         
-        .asset-card .card-header i {
-            margin-right: 10px;
-            padding: 8px;
+        .maintenance-card .card-header i {
+            margin-right: 15px;
+            padding: 10px;
             background: var(--gradient-primary);
             color: white;
-            border-radius: 8px;
-            font-size: 0.9rem;
+            border-radius: 10px;
+            font-size: 1rem;
         }
         
         .table-container {
@@ -371,27 +389,24 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
-        /* Status Controls - Enhanced */
-        .status-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .form-check-custom {
-            display: inline-flex;
-            align-items: center;
+        /* Enhanced Button Styles */
+        .btn-custom {
             padding: 0.6rem 1.2rem;
-            background: rgba(128, 0, 0, 0.05);
-            border-radius: 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
             transition: var(--transition);
-            border: 2px solid transparent;
+            border: none;
             position: relative;
             overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
         }
 
-        .form-check-custom::before {
+        .btn-custom::before {
             content: '';
             position: absolute;
             top: 0;
@@ -402,75 +417,81 @@
             transition: left 0.5s;
         }
 
-        .form-check-custom:hover::before {
+        .btn-custom:hover::before {
             left: 100%;
         }
 
-        .form-check-custom:hover {
-            background: rgba(128, 0, 0, 0.1);
-            transform: translateY(-2px);
-            border-color: rgba(128, 0, 0, 0.2);
-        }
-
-        .form-check-custom input[type="radio"] {
-            margin-right: 0.6rem;
-            transform: scale(1.2);
-            accent-color: var(--primary-color);
-        }
-
-        .form-check-custom label {
-            margin: 0;
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .form-check-custom label i {
-            margin-right: 0.4rem;
-        }
-
-        /* View Button - Enhanced */
-        .view-btn {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.85rem;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
+        .btn-primary-custom {
             background: var(--gradient-primary);
             color: white;
-            border: none;
-            transition: var(--transition);
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(128, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .view-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .view-btn:hover::before {
-            left: 100%;
-        }
-        
-        .view-btn:hover {
-            background: linear-gradient(135deg, #600000 0%, #800000 100%);
-            color: white;
-            transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
         }
         
-        .view-btn i {
+        .btn-primary-custom:hover {
+            background: linear-gradient(135deg, #600000 0%, #800000 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(128, 0, 0, 0.4);
+            text-decoration: none;
+        }
+        
+        .btn-success-custom {
+            background: var(--gradient-success);
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-success-custom:hover {
+            background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+            text-decoration: none;
+        }
+        
+        .btn-warning-custom {
+            background: var(--gradient-warning);
+            color: white;
+            box-shadow: 0 4px 15px rgba(253, 126, 20, 0.3);
+        }
+        
+        .btn-warning-custom:hover {
+            background: linear-gradient(135deg, #e0a800 0%, #d39e00 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(253, 126, 20, 0.4);
+            text-decoration: none;
+        }
+        
+        .btn-danger-custom {
+            background: var(--gradient-danger);
+            color: white;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        }
+        
+        .btn-danger-custom:hover {
+            background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+            text-decoration: none;
+        }
+
+        .btn-accent-custom {
+            background: linear-gradient(135deg, var(--accent-color), #e0a800);
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+        
+        .btn-accent-custom:hover {
+            background: linear-gradient(135deg, #e0a800, #d39e00);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+            text-decoration: none;
+        }
+
+        .btn-custom i {
             margin-right: 6px;
         }
 
@@ -541,106 +562,29 @@
             background: white;
         }
 
-        /* Status Badge */
-        .status-badge {
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        /* Empty State Styling */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #6c757d;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            color: rgba(128, 0, 0, 0.3);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .empty-state h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
         }
 
-        .status-badge i {
-            margin-right: 0.5rem;
-        }
-        
-        .status-active {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-        }
-        
-        .status-condemned {
-            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-            color: white;
-        }
-
-        /* Button Styles - Enhanced */
-        .btn-custom {
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            transition: var(--transition);
-            border: none;
-            position: relative;
-            overflow: hidden;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .btn-custom::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-custom:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary-custom {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
-        }
-        
-        .btn-primary-custom:hover {
-            background: linear-gradient(135deg, #600000 0%, #800000 100%);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(128, 0, 0, 0.4);
-        }
-        
-        .btn-accent-custom {
-            background: linear-gradient(135deg, var(--accent-color), #e0a800);
-            color: var(--text-dark);
-            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
-        }
-        
-        .btn-accent-custom:hover {
-            background: linear-gradient(135deg, #e0a800, #d39e00);
-            color: var(--text-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
-        }
-
-        .btn-custom i {
-            margin-right: 8px;
-        }
-
-        /* Loading Animation */
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .empty-state p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
         }
 
         /* Success Message - Enhanced */
@@ -673,39 +617,6 @@
         @keyframes fadeOut {
             from { opacity: 1; transform: translateX(0); }
             to { opacity: 0; transform: translateX(100%); }
-        }
-
-        /* Asset Details Modal */
-        .asset-details {
-            margin-bottom: 1.5rem;
-        }
-        
-        .asset-details .detail-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background: rgba(128, 0, 0, 0.03);
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .asset-details .detail-label {
-            font-weight: 600;
-            color: var(--primary-dark);
-            display: flex;
-            align-items: center;
-        }
-
-        .asset-details .detail-label i {
-            margin-right: 8px;
-            color: var(--primary-color);
-        }
-
-        .asset-details .detail-value {
-            font-weight: 500;
-            color: var(--text-dark);
         }
 
         /* Footer Styles */
@@ -874,15 +785,17 @@
 
             .page-header {
                 padding: 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .page-title {
                 font-size: 1.5rem;
             }
 
-            .status-controls {
+            .action-controls {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 1rem;
             }
         }
 
@@ -959,20 +872,23 @@
 
             .page-title {
                 font-size: 1.3rem;
+                text-align: center;
             }
 
             .table-responsive {
                 font-size: 0.85rem;
             }
 
-            .status-controls {
-                flex-direction: column;
-                gap: 0.5rem;
+            .btn-custom {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+                margin: 0.2rem;
             }
 
-            .form-check-custom {
-                width: 100%;
-                justify-content: center;
+            .action-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
             }
         }
 
@@ -1013,8 +929,8 @@
                     <li><a href="/admin/home" class="menu-item">Dashboard</a></li>
                     <li><a href="/admin/adminStaff" class="menu-item">Staff</a></li>
                     <li><a href="/admin/adminUserHistory" class="menu-item">User History</a></li>
-                    <li><a href="/admin/adminMaintain" class="menu-item">Maintain</a></li>
-                    <li><a href="/admin/adminCondemn" class="menu-item active">Condemn</a></li>
+                    <li><a href="/admin/adminMaintain" class="menu-item active">Maintain</a></li>
+                    <li><a href="/admin/adminCondemn" class="menu-item">Condemn</a></li>
                     <li><a href="/admin/adminAssetAllocation" class="menu-item">Asset Allocation</a></li>
                     <li><a href="/admin/adminAsset" class="menu-item">Asset</a></li>
                     <li><a href="/admin/adminInvoice" class="menu-item">Invoice</a></li>
@@ -1029,30 +945,74 @@
             <div class="page-header">
                 <div>
                     <h1 class="page-title">
-                        <i class="fas fa-exclamation-triangle"></i>Asset Condemnation Management
+                        <i class="fas fa-tools"></i>Asset Maintenance Management
                     </h1>
-                    <p class="page-subtitle">Manage and track condemned assets with detailed documentation</p>
+                    <p class="page-subtitle">Manage and track asset maintenance schedules with comprehensive documentation</p>
                 </div>
             </div>
 
-            <!-- Asset Management Card -->
-            <div class="asset-card">
+            <!-- Action Controls -->
+            <div class="action-controls">
+                <a href="/admin/adminMaintain/recycle-bin" class="btn-custom btn-danger-custom">
+                    <i class="fas fa-trash"></i>Recycle Bin
+                </a>
+                <button type="button" class="btn-custom btn-primary-custom" data-bs-toggle="modal" data-bs-target="#maintainModal">
+                    <i class="fas fa-plus"></i>Add New Maintenance
+                </button>
+            </div>
+
+            <!-- Maintenance Records Card -->
+            <div class="maintenance-card">
                 <div class="card-header">
-                    <h5><i class="fas fa-list-alt"></i>Asset Condemnation Registry</h5>
+                    <h2><i class="fas fa-clipboard-list"></i>Maintenance Records Registry</h2>
                 </div>
                 <div class="card-body">
                     <div class="table-container">
                         <div class="table-responsive">
-                            <table class="table table-hover" id="assetTable">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th><i class="fas fa-hashtag me-2"></i>Asset ID</th>
-                                        <th><i class="fas fa-tag me-2"></i>Asset Name</th>
-                                        <th><i class="fas fa-toggle-on me-2"></i>Condemnation Status</th>
+                                        <th><i class="fas fa-hashtag me-2"></i>ID</th>
+                                        <th><i class="fas fa-calendar-check me-2"></i>Maintenance Date</th>
+                                        <th><i class="fas fa-calendar-plus me-2"></i>Next Maintenance Date</th>
+                                        <th><i class="fas fa-file-alt me-2"></i>Description</th>
+                                        <th><i class="fas fa-dollar-sign me-2"></i>Cost</th>
+                                        <th><i class="fas fa-cogs me-2"></i>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Data will be loaded here -->
+                                    <tr th:each="maintain : ${maintains}">
+                                        <td><strong th:text="${maintain.maintainId}">M001</strong></td>
+                                        <td th:text="${#temporals.format(maintain.maintainsDate, 'yyyy-MM-dd')}">2024-01-15</td>
+                                        <td th:text="${#temporals.format(maintain.nextMaintainDate, 'yyyy-MM-dd')}">2024-07-15</td>
+                                        <td th:text="${maintain.description}">Regular maintenance check</td>
+                                        <td>
+                                            <strong>LKR </strong>
+                                            <span th:text="${#numbers.formatDecimal(maintain.cost, 0, 'COMMA', 2, 'POINT')}">5,000.00</span>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a th:href="@{/admin/adminMaintain/edit/{id}(id=${maintain.maintainId})}" 
+                                                   class="btn-custom btn-warning-custom">
+                                                    <i class="fas fa-edit"></i>Edit
+                                                </a>
+                                                <a th:href="@{/admin/adminMaintain/delete/{id}(id=${maintain.maintainId})}" 
+                                                   class="btn-custom btn-danger-custom" 
+                                                   onclick="return confirm('Are you sure you want to delete this maintenance record?');">
+                                                    <i class="fas fa-trash"></i>Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr th:if="${#lists.isEmpty(maintains)}">
+                                        <td colspan="6" class="text-center">
+                                            <div class="empty-state">
+                                                <i class="fas fa-clipboard-list"></i>
+                                                <h3>No Maintenance Records Found</h3>
+                                                <p>Start by adding your first maintenance record using the "Add New Maintenance" button above.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -1060,78 +1020,60 @@
                 </div>
             </div>
 
-            <!-- Condemn Confirmation Modal -->
-            <div class="modal fade" id="condemnConfirmModal" tabindex="-1" aria-labelledby="condemnConfirmModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="condemnConfirmModalLabel">
-                                <i class="fas fa-exclamation-triangle"></i>Confirm Asset Condemnation
-                            </h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="text-center mb-4">
-                                <i class="fas fa-exclamation-circle text-warning" style="font-size: 3rem;"></i>
-                            </div>
-                            <p class="text-center fs-5 mb-4">Are you sure you want to condemn this asset?</p>
-                            <p class="text-center text-muted">This action will mark the asset as condemned and require detailed documentation.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-custom btn-accent-custom" id="confirmCondemnBtn">
-                                <i class="fas fa-check"></i>Yes, Condemn Asset
-                            </button>
-                            <button type="button" class="btn btn-custom btn-primary-custom" data-bs-dismiss="modal">
-                                <i class="fas fa-times"></i>Cancel
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Condemn Details Modal -->
-            <div class="modal fade" id="condemnDetailsModal" tabindex="-1" aria-labelledby="condemnDetailsModalLabel" aria-hidden="true">
+            <!-- Enhanced Bootstrap Modal -->
+            <div class="modal fade" id="maintainModal" tabindex="-1" aria-labelledby="maintainModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="condemnDetailsModalLabel">
-                                <i class="fas fa-file-alt"></i>Asset Condemnation Details
-                            </h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="condemnDetailsForm">
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <label for="condemnDateInput" class="form-label">
-                                            <i class="fas fa-calendar-alt"></i>Condemnation Date
-                                        </label>
-                                        <input type="date" class="form-control" id="condemnDateInput" required>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
+                        <form th:action="@{/admin/adminMaintain/save}" th:object="${maintain}" method="post">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="maintainModalLabel">
+                                    <i class="fas fa-plus-circle"></i>Add New Maintenance Record
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
                                         <label class="form-label">
-                                            <i class="fas fa-info-circle"></i>Status
+                                            <i class="fas fa-hashtag"></i>Maintenance ID
                                         </label>
-                                        <div class="mt-2">
-                                            <span class="status-badge status-condemned">
-                                                <i class="fas fa-exclamation-triangle"></i>Condemned
-                                            </span>
-                                        </div>
+                                        <input type="text" th:field="*{maintainId}" class="form-control" required placeholder="Enter maintenance ID">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            <i class="fas fa-calendar-check"></i>Maintenance Date
+                                        </label>
+                                        <input type="date" th:field="*{maintainsDate}" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            <i class="fas fa-calendar-plus"></i>Next Maintenance Date
+                                        </label>
+                                        <input type="date" th:field="*{nextMaintainDate}" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            <i class="fas fa-dollar-sign"></i>Cost (LKR)
+                                        </label>
+                                        <input type="number" step="0.01" th:field="*{cost}" class="form-control" required placeholder="0.00">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">
+                                            <i class="fas fa-file-alt"></i>Description
+                                        </label>
+                                        <textarea th:field="*{description}" class="form-control" rows="4" required placeholder="Provide detailed description of the maintenance work performed..."></textarea>
                                     </div>
                                 </div>
-                                <div class="mb-4">
-                                    <label for="condemnDetailsInput" class="form-label">
-                                        <i class="fas fa-clipboard-list"></i>Condemnation Details & Reason
-                                    </label>
-                                    <textarea class="form-control" id="condemnDetailsInput" rows="4" required placeholder="Please provide detailed information about the reason for condemnation, condition of the asset, and any relevant observations..."></textarea>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-custom btn-accent-custom btn-lg">
-                                        <i class="fas fa-save"></i>Submit Condemnation Record
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn-custom btn-success-custom btn-lg">
+                                    <i class="fas fa-save"></i>Save Maintenance Record
+                                </button>
+                                <button type="button" class="btn-custom btn-accent-custom" data-bs-dismiss="modal">
+                                    <i class="fas fa-times"></i>Cancel
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1189,259 +1131,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        let selectedAssetId = null;
-        
-        // Load assets and render table
-        function renderAssetTable(assets) {
-            const tbody = document.querySelector('#assetTable tbody');
-            tbody.innerHTML = assets.map(asset => {
-                const isCondemned = asset.activityStatus === false || asset.activityStatus === 0 || asset.activityStatus === "0";
-                return `
-                <tr>
-                    <td><strong>${asset.assetId}</strong></td>
-                    <td>${asset.name}</td>
-                    <td>
-                        <div class="status-controls">
-                            <div class="form-check-custom">
-                                <input class="form-check-input" type="radio" name="condemnStatus_${asset.assetId}" id="condemnOff_${asset.assetId}" value="off" ${isCondemned ? 'disabled' : 'checked'}>
-                                <label class="form-check-label" for="condemnOff_${asset.assetId}">
-                                    <i class="fas fa-check-circle text-success"></i>Active
-                                </label>
-                            </div>
-                            <div class="form-check-custom">
-                                <input class="form-check-input" type="radio" name="condemnStatus_${asset.assetId}" id="condemnOn_${asset.assetId}" value="on" ${isCondemned ? 'checked disabled' : ''}>
-                                <label class="form-check-label" for="condemnOn_${asset.assetId}">
-                                    <i class="fas fa-exclamation-triangle text-warning"></i>Condemn
-                                </label>
-                            </div>
-                            <button class="btn view-btn" onclick="viewAsset('${asset.assetId}')">
-                                <i class="fas fa-eye"></i>View Details
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                `;
-            }).join('');
-            
-            // Add event listeners for radio buttons only if not condemned
-            assets.forEach(asset => {
-                if (asset.activityStatus) {
-                    document.getElementById(`condemnOn_${asset.assetId}`).addEventListener('change', function() {
-                        if (this.checked) {
-                            selectedAssetId = asset.assetId;
-                            const confirmModal = new bootstrap.Modal(document.getElementById('condemnConfirmModal'));
-                            confirmModal.show();
-                        }
-                    });
-                }
-            });
-        }
-        
-        function loadAssets() {
-            // View asset details popup
-            window.viewAsset = function(assetId) {
-                fetch('/admin/condemn/assets')
-                    .then(res => res.json())
-                    .then(assets => {
-                        const asset = assets.find(a => a.assetId === assetId);
-                        if (!asset) return;
-                        let activityStatusText = (asset.activityStatus === false || asset.activityStatus === 0 || asset.activityStatus === "0") ? 'Condemn' : 'Active';
-                        if (activityStatusText === 'Condemn') {
-                            // Condemned: fetch condemn details
-                            fetch(`/admin/condemn/condemnDetails?assetId=${assetId}`)
-                                .then(res => res.json())
-                                .then(condemn => {
-                                    showViewModal({
-                                        assetId: asset.assetId,
-                                        name: asset.name,
-                                        activityStatus: activityStatusText,
-                                        condemnDate: condemn.condemnDate,
-                                        condemnDetails: condemn.condemnDetails
-                                    });
-                                });
-                        } else {
-                            showViewModal({
-                                assetId: asset.assetId,
-                                name: asset.name,
-                                activityStatus: activityStatusText
-                            });
-                        }
-                    });
-            }
-
-            // Proper function for showing the modal
-            window.showViewModal = function(data) {
-                if (!document.getElementById('viewAssetModal')) {
-                    const modalHtml = `
-                    <div class="modal fade" id="viewAssetModal" tabindex="-1" aria-labelledby="viewAssetModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="viewAssetModalLabel">
-                                <i class="fas fa-info-circle"></i>Asset Information
-                            </h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body" id="viewAssetModalBody">
-                            <!-- Details will be loaded here -->
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-custom btn-primary-custom" data-bs-dismiss="modal">
-                                <i class="fas fa-times"></i>Close
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>`;
-                    document.body.insertAdjacentHTML('beforeend', modalHtml);
-                }
-                
-                let html = `
-                    <div class="asset-details">
-                        <div class="detail-item">
-                            <div class="detail-label">
-                                <i class="fas fa-hashtag"></i>Asset ID
-                            </div>
-                            <div class="detail-value">${data.assetId}</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">
-                                <i class="fas fa-tag"></i>Asset Name
-                            </div>
-                            <div class="detail-value">${data.name}</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">
-                                <i class="fas fa-info-circle"></i>Current Status
-                            </div>
-                            <div class="detail-value">
-                                <span class="status-badge ${data.activityStatus === 'Condemn' ? 'status-condemned' : 'status-active'}">
-                                    <i class="fas ${data.activityStatus === 'Condemn' ? 'fa-exclamation-triangle' : 'fa-check-circle'}"></i>
-                                    ${data.activityStatus}
-                                </span>
-                            </div>
-                        </div>`;
-                
-                if (data.activityStatus === 'Condemn') {
-                    // Format date if present
-                    let dateText = 'Not specified';
-                    if (data.condemnDate !== undefined && data.condemnDate !== null && String(data.condemnDate).trim() !== '') {
-                        let d = new Date(data.condemnDate);
-                        if (!isNaN(d.getTime())) {
-                            dateText = d.toLocaleDateString('en-CA');
-                        } else {
-                            dateText = data.condemnDate;
-                        }
-                    }
-                    
-                    let detailsText = 'No details provided';
-                    if (data.condemnDetails !== undefined && data.condemnDetails !== null && String(data.condemnDetails).trim() !== '') {
-                        detailsText = data.condemnDetails;
-                    }
-                    
-                    html += `
-                        <div class="detail-item">
-                            <div class="detail-label">
-                                <i class="fas fa-calendar-alt"></i>Condemnation Date
-                            </div>
-                            <div class="detail-value">${dateText}</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">
-                                <i class="fas fa-clipboard-list"></i>Condemnation Details
-                            </div>
-                            <div class="detail-value">${detailsText}</div>
-                        </div>`;
-                }
-                
-                html += '</div>';
-                
-                document.getElementById('viewAssetModalBody').innerHTML = html;
-                const modal = new bootstrap.Modal(document.getElementById('viewAssetModal'));
-                modal.show();
-            }
-            
-            fetch('/admin/condemn/assets')
-                .then(res => res.json())
-                .then(data => {
-                    renderAssetTable(data);
-                });
-        }
-        
-        document.addEventListener('DOMContentLoaded', loadAssets);
-
-        // Confirm Condemn
-        document.getElementById('confirmCondemnBtn').addEventListener('click', function() {
-            const confirmModal = bootstrap.Modal.getInstance(document.getElementById('condemnConfirmModal'));
-            confirmModal.hide();
-            const detailsModal = new bootstrap.Modal(document.getElementById('condemnDetailsModal'));
-            detailsModal.show();
-        });
-
-        // Submit Condemn Details
-        document.getElementById('condemnDetailsForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const condemnDate = document.getElementById('condemnDateInput').value;
-            const condemnDetails = document.getElementById('condemnDetailsInput').value;
-            
-            // Show loading state
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="loading-spinner me-2"></span>Processing...';
-            submitBtn.disabled = true;
-            
-            // Prepare payload
-            const payload = {
-                condemnId: selectedAssetId + '_' + Date.now(),
-                condemnDate: condemnDate,
-                condemnDetails: condemnDetails,
-                activityStatus: 'Condemn',
-                asset: { assetId: selectedAssetId }
-            };
-            
-            fetch('/admin/condemn/condemn', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-            .then(res => {
-                if (res.ok) {
-                    // Success animation
-                    submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Success!';
-                    submitBtn.classList.remove('btn-accent-custom');
-                    submitBtn.classList.add('btn-success');
-                    
-                    // Show success message
-                    showSuccessMessage('Asset condemnation recorded successfully!');
-                    
-                    setTimeout(() => {
-                        location.reload();
-                    }, 1500);
-                } else {
-                    throw new Error('Server error');
-                }
-            })
-            .catch(error => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                alert('Error saving condemnation details. Please try again.');
-            });
-        });
-
-        // Show success message
-        function showSuccessMessage(message) {
-            const successDiv = document.createElement('div');
-            successDiv.className = 'success-message';
-            successDiv.innerHTML = `<i class="fas fa-check-circle"></i>${message}`;
-            document.body.appendChild(successDiv);
-            
-            // Remove after animation completes
-            setTimeout(() => {
-                successDiv.remove();
-            }, 3000);
-        }
-    </script>
-    <script>
         // Mobile menu toggle functionality
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('active');
@@ -1468,6 +1157,53 @@
                     });
                 }
             });
+        });
+
+        // Enhanced confirmation dialogs
+        document.querySelectorAll('[onclick*="confirm"]').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('⚠️ Are you sure you want to delete this maintenance record?\n\nThis action will move the record to the recycle bin where it can be restored later.')) {
+                    showSuccessMessage('Maintenance record moved to recycle bin successfully!');
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 1000);
+                }
+            });
+        });
+
+        // Show success message
+        function showSuccessMessage(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.innerHTML = `<i class="fas fa-check-circle"></i>${message}`;
+            document.body.appendChild(successDiv);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+        }
+
+        // Add hover effects to table rows
+        document.querySelectorAll('.table tbody tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Form validation enhancement
+        document.getElementById('maintainModal').addEventListener('shown.bs.modal', function() {
+            // Set today's date as default for maintenance date
+            const today = new Date().toISOString().split('T')[0];
+            const maintainDateInput = this.querySelector('input[type="date"]');
+            if (maintainDateInput && !maintainDateInput.value) {
+                maintainDateInput.value = today;
+            }
         });
     </script>
 </body>

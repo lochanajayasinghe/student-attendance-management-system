@@ -470,13 +470,13 @@
             <div class="logo-container">
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/University_of_Peradeniya_crest.png" alt="University Logo" class="logo-img">
                 <div>
-                    <h5 class="mb-0">University of Peradeniya</h5>
-                    <small>Asset Management System </small>
+                    <h5 class="mb-0 text-light">University of Peradeniya</h5>
+                    <small class="text-light">Asset Management System - Admin</small>
                 </div>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="/user/home">Home</a></li>
+                    <li><a href="/adminhome">Home</a></li>
                     <li><a th:href="@{/}" class="btn btn-outline-light">Logout</a></li>
                 </ul>
             </nav>
@@ -489,24 +489,62 @@
         <aside class="sidebar">
             <nav>
                 <ul class="sidebar-menu">
-                    <li><a href="/user-history" class="menu-item">User History</a></li>
-                    <li><a href="/Maintain" class="menu-item">Maintain</a></li>
-                    <li><a href="/Condemn" class="menu-item">Condemn</a></li>
-                    <li><a href="/AssetHistory" class="menu-item">Asset History</a></li>
-                    <li><a href="/Asset" class="menu-item active">Asset</a></li>
-                    <li><a href="/Invoice" class="menu-item">Invoice</a></li>
-                    <li><a href="/Movement" class="menu-item">Movement</a></li>
+                    <li><a href="/admin/home" class="menu-item  ">Dashboard</a></li>
+                    <li><a href="/admin/adminStaff" class="menu-item ">Staff</a></li>
+                    <li><a href="/admin/adminUserHistory" class="menu-item">User History</a></li>
+                    <li><a href="/admin/adminMaintain" class="menu-item active">Maintain</a></li>
+                    <li><a href="/admin/adminCondemn" class="menu-item">Condemn</a></li>
+                    <li><a href="/admin/adminAssetAllocation" class="menu-item">Asset Allocation</a></li>
+                    <li><a href="/admin/adminAsset" class="menu-item ">Asset</a></li>
+                    <li><a href="/admin/adminInvoice" class="menu-item ">Invoice</a></li>
+                    <li><a href="/admin/adminMovement" class="menu-item">Movement</a></li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <h1>Asset
-
-
+            <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
                 
-            </h1>
+                
+            </div>
+            <a href="/admin/adminMaintain" class="btn btn-hero btn-hero-outline">Back to Maintenance List</a>
+        </div>
+    </header>
+    <main class="main-content">
+        <h2 class="mb-4"><i class="fas fa-trash"></i> Recycle Bin - Deleted Maintenance Records</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Maintains Date</th>
+                    <th>Next Maintain Date</th>
+                    <th>Description</th>
+                    <th>Cost</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="maintain : ${deletedMaintains}">
+                    <td th:text="${maintain.maintainId}"></td>
+                    <td th:text="${#temporals.format(maintain.maintainsDate, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${#temporals.format(maintain.nextMaintainDate, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${maintain.description}"></td>
+                    <td th:text="${maintain.cost}"></td>
+                    <td>
+                        <a th:href="@{/admin/adminMaintain/restore/{id}(id=${maintain.maintainId})}" class="btn btn-success btn-sm"><i class="fas fa-undo"></i> Restore</a>
+                        <a th:href="@{/admin/adminMaintain/permanent-delete/{id}(id=${maintain.maintainId})}" class="btn btn-danger btn-sm" onclick="return confirm('Permanently delete this record?');"><i class="fas fa-trash-alt"></i> Delete Permanently</a>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(deletedMaintains)}">
+                    <td colspan="6" class="text-center">No deleted records found.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         </main>
     </div>
 
@@ -530,7 +568,7 @@
                         <li><a href="/home">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contactUs">Contact</a></li>
-                        <li><a th:href="@{/}" >Login</a></li>
+                        <li><a th:href="@{/login}">Login</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
