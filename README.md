@@ -1,1 +1,1 @@
-# Asset-Management-System
+# Student attendance management system
